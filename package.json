@@ -1,0 +1,14 @@
+{
+  "name": "code_hardcorius",
+  "description": "Code Hardcorius building tool",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "dependencies": {
+    "nunjucks": "0.1.x",
+    "async": "0.2.x"
+  }
+}
