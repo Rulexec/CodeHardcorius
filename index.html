@@ -5,7 +5,12 @@
   <title>Code Hardcorius</title>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+
+  <script src='rainbow.min.js'></script>
+  <link href='github.css' rel='stylesheet' media='screen'>
+
   <link href='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' media='screen'>
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 
   <script>
 $(function() {
@@ -53,7 +58,14 @@ $(function() {
     }
 });
   </script>
+
   <style>
+p {
+    font-size: 1.3em;
+    font-family: 'EB Garamond', serif;
+    font-height: 1.3em;
+    margin: 1em;
+}
 #content-block {
     position: fixed;
     height: 100%;
@@ -94,13 +106,13 @@ $(function() {
   </style>
 </head>
 
-<body><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter21147331 = new Ya.Metrika({id:21147331, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/21147331" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+<body><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter21337681 = new Ya.Metrika({id:21337681, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/21337681" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 <div id='content-block'>
   <div id='content'>
     <div style='padding: 10px 0px 0px 20px;'>
       <h4>Содержание</h4>
       <ul class='unstyled'>
-<li><a href='#introduction'>Предисловие</a></li><li><a href='#algorhytm'>Алгоритм</a><ul><li><a href='#if'>Условие</a></li><li><a href='#loop'>Цикл</a><ul><li><a href='#while'>while</a></li><li><a href='#do-while'>do while</a></li><li><a href='#for'>for</a></li></ul></li></ul></li><li><a href='#concepts'>Концепции</a><ul><li><a href='#black-box'>Чёрный ящик</a></li><li><a href='#state'>Состояние</a></li><li><a href='#interface-concept'>Интерфейс</a></li></ul></li><li><a href='#back'>Фундаментальное <span class='muted'>(?)</span></a><ul><li><a href='#variable'>Переменная</a></li><li><a href='#array'>Массив</a></li><li><a href='#pointer'>Указатель</a></li></ul></li><li><a href='#abstract'>Абстрактные типы данных</a><ul><li><a href='#list'>Список</a><ul><li><a href='#singly-linked'>Односвязный список</a></li><li><a href='#doubly-linked'>Двусвязный список</a></li></ul></li><li><a href='#hashtable'>Хеш-таблица</a><ul><li><a href='#hashmap'>HashMap</a></li><li><a href='#hashset'>HashSet</a></li></ul></li><li><a href='#tree'>Дерево</a></li></ul></li><li><a href='#paradigms'>Парадигмы</a><ul><li><a href='#OOP'>ООП</a></li><li><a href='#FP'>Функциональное программирование</a></li></ul></li><li><a href='#OOProgramming'>Объектно-ориентированное программирование</a><ul><li><a href='#object'>Объект</a></li><li><a href='#class'>Класс</a></li><li><a href='#inheritance'>Наследование</a></li><li><a href='#object-interface'>Интерфейс</a></li><li><a href='#polymorphism'>Полиморфизм</a></li></ul></li><li><a href='#architecture'>Архитектура</a><ul><li><a href='#incapsulation'>Инкапсуляция</a></li><li><a href='#patterns'>Паттерны</a><ul><li><a href='#dependency-injection'>Dependency injection</a></li><li><a href='#pubsub'>PubSub</a></li></ul></li></ul></li><li><a href='#complexity'>Сложность алгоритма</a></li>
+<li><a href='#introduction'>Предисловие</a></li><li><a href='#algorhytm'>Алгоритм</a><ul><li><a href='#if'>Условие</a></li><li><a href='#loop'>Цикл</a><ul><li><a href='#while'>while</a></li><li><a href='#do-while'>do while</a></li><li><a href='#for'>for</a></li></ul></li></ul></li><li><a href='#back'>Фундаментальное <span class='muted'>(?)</span></a><ul><li><a href='#variable'>Переменная</a></li><li><a href='#array'>Массив</a></li><li><a href='#pointer'>Указатель</a></li></ul></li><li><a href='#concepts'>Концепции</a><ul><li><a href='#black-box'>Чёрный ящик</a></li><li><a href='#state'>Состояние</a></li><li><a href='#interface-concept'>Интерфейс</a></li><li><a href='#function'>Функция</a></li></ul></li><li><a href='#abstract'>Абстрактные типы данных</a><ul><li><a href='#list'>Список</a><ul><li><a href='#singly-linked'>Односвязный список</a></li><li><a href='#doubly-linked'>Двусвязный список</a></li></ul></li><li><a href='#hashtable'>Хеш-таблица</a><ul><li><a href='#hashmap'>HashMap</a></li><li><a href='#hashset'>HashSet</a></li></ul></li><li><a href='#tree'>Дерево</a></li></ul></li><li><a href='#paradigms'>Парадигмы</a><ul><li><a href='#OOP'>ООП</a></li><li><a href='#FP'>Функциональное программирование</a></li></ul></li><li><a href='#OOProgramming'>Объектно-ориентированное программирование</a><ul><li><a href='#object'>Объект</a></li><li><a href='#class'>Класс</a></li><li><a href='#inheritance'>Наследование</a></li><li><a href='#object-interface'>Интерфейс</a></li><li><a href='#polymorphism'>Полиморфизм</a></li></ul></li><li><a href='#architecture'>Архитектура</a><ul><li><a href='#incapsulation'>Инкапсуляция</a></li><li><a href='#patterns'>Паттерны</a><ul><li><a href='#dependency-injection'>Dependency injection</a></li><li><a href='#pubsub'>PubSub</a></li></ul></li></ul></li><li><a href='#security'>Безопасность</a><ul><li><a href='#input-data'>Входные данные</a></li></ul></li><li><a href='#complexity'>Сложность алгоритма</a></li><li><a href='#end'>Заключение</a></li>
       </ul>
     </div>
   </div>
@@ -111,7 +123,7 @@ $(function() {
   <div class='row-fluid'>
     <div class='span8 offset2'>
       <div class='page-header'>
-        <h1>Code Hardcorius<sup><small style='font-size:8pt' title='23.05.2013'>v0.0.0</small></sup> <small>print('Hello, World!')</small></h1>
+        <h1>Code Hardcorius<sup><small style='font-size:8pt' title='24.05.2013'>v0.1.0</small></sup> <small>print('Hello, World!')</small></h1>
       </div>
     </div>
   </div>
@@ -123,119 +135,149 @@ $(function() {
 <h1 id='introduction'>
   <a href='#introduction' class='muted'>§</a> Предисловие
 </h1>
+<p>Здравствуйте. Меня зовут <a href='http://com.muna.by/people/ruliov'>Александр Рулёв</a> и я в какой-то степени программист. Хотя и не люблю называть себя таковым, т.к. на момент написания данного абзаца не имел никаких законченных и успешных проектов. Однако незаконченные проекты хоть и не приносят известности, власти и богатсва, приносят опыт и скилл.</p>
+<p>Этот скилл, который я получил за около 6-8 лет моего «стажа» я и попытаюсь выразить в виде данного произведения. Вообще, я обычно веду отсчёт с 13 лет, когда получил свои первые деньги за код, однако несколько лет до этого я потратил на обучение. Полностью самостоятельное, у меня ни родители нисколько не программисты (и не учёные, не учителя), не было знакомых программистов. Даже интернета какое-то время не было. Книг тоже не было (кроме 2-3 штук).</p>
+<p>Я не несу никакой ответственности за все изменения, которые могут произойти в вашей жизни в следствии прочитанного, если что. Если я вдруг напишу какую-то неправду и вы запомните это на всю жизнь — я тоже не виноват. <a href='#input-data'>Не доверяйте данным, пришедшим от клиента</a>.</p>
+<p>План данной «книги» таков: разбираемся с устройством <a href='#algorhytm'>алгоритмов</a>, учимся их строить, разбираемся с <a href='#back'>базовыми понятиями</a>, начинаем погружаться в мир <a href='#concepts'>абстракций</a>, <a href='#abstract'>абстрактных типов данных</a>, узнаём про <a href='#OOProgramming'>ООП</a>, дополнительно разбираемся в понятии <a href='#architecture'>«архитектура»</a>, затронем вопросы <a href='#security'>безопасности</a>, а так же <a href='#complexity'>сложностей алгоритмов</a>.</p>
+<p>Ну что ж. Попробуем.</p>
 <h1 id='algorhytm'>
   <a href='#algorhytm' class='muted'>§</a> Алгоритм
 </h1>
+<p>Я надеюсь, что вы являетесь умным человеком и понимаете, что значит слово «алгоритм». Если же нет, то сделайте следующим образом. Наберите в адресной строке вашего браузера <a href='http://google.com'>http://google.com/</a>. Там в строке наберите «алгоритм», узнайте и возвращайтесь. Когда вы чего-то не знаете, но хотите узнать — всегда делайте так. И через какое-то время вы будете знать довольно много. Либо знать, как это найти.</p>
+<p>Я же попытаюсь рассказать о концепциях, которых, в принципе, достаточно, чтобы построить любой алгоритм.</p>
+<p>Суть понятия алгоритма в том, что у нас есть некая последовательность действий, а так же некие логические конструкции, которые позволяют нам исполнять, либо же не исполнять некоторые части данного алгоритма, что ведёт к решению нашей проблемы нужным нам образом.</p>
+<p>Я не стану рисовать блок-схемы, хоть это и был бы самый простой способ это объяснить. Но я надеюсь, вы уловите суть. Или же найдёте их и посмотрите.</p>
+<p><span class='text-warning'>Внимание!</span> Далее я буду прям с окопа бросать в вас код. Если вас к этому не готовили, то можете смело пропускать его и читать лишь то, что написано «нормальными» буквами. Но я надеюсь, ваше мышление способно уловить суть неизвестного вам кода.</p>
 <h2 id='if'>
   <a href='#if' class='muted'>§</a> Условие
 </h2>
+<p>Оператор if, ветвление, условный оператор. Не важно, как называть, суть одна. Данная конструкция позволяет «отправить» выполнение алгоритма по другому пути.</p>
+<p>Т.е. например, мы хотим ограничить доступ к нашей программе добросовестным людям, которые ещё не достигли 18-летнего возраста. Для этого нам нужно условие, которое будет сверять разницу между текущим годом и годом рождения человека. Этим и занимается if.</p>
+<pre><code data-language='python'># encoding: utf-8
+
+from time import gmtime
+
+currentYear = gmtime().tm_year # Получаем текущий код
+# Получаем год рождения от пользователя:
+userYear = int(input('Введите год, в котором вы родились: '))
+
+if currentYear - userYear &lt; 18: # Вот он, например
+    print('Извините, но дальше идёт hardporn-раздел, вам нельзя!')
+else:
+    print('Нет, мы врали. Здесь ничего нет.')</code></pre>
+<p>Здесь, конечно, есть множество проблем. Например, не обрабатывается ситуация, если пользователь введёт не число, год может быть неадекватным (например, в будущем или больше чем 150 лет (нежить — не наша целевая аудитория)). Но главная проблема в том, что человеку уже может быть 18, но по разнице лет ещё нет. Можно ввести погрешность в год, либо просить ещё месяц и день. Но этот пример исключительно для демонстрации сути условия, так что не суть важно.</p>
+<p>Если хотите это запустить на своём компьютере, вам нужно скачать и установить <a href='http://www.python.org/download/'>Python 3</a>. Если это вам не помогло и вы всё равно не знаете как запустить... погуглите что-нибудь вроде «how to run python script». Например, там есть ссылка на <a href='http://docs.python.org/3/faq/windows'>FAQ с сайта питона</a>.</p>
 <h2 id='loop'>
   <a href='#loop' class='muted'>§</a> Цикл
 </h2>
+<p>Суть цикла в том, чтобы организовать повторение некоторой части алгоритма до выполнения какого-то условия.</p>
+<p>Если бы я мог рисовать блок-схемы, было бы легко понять, почему есть несколько разновидностей цикла и чем они отличаются друг от друга. Но, надеюсь, удастся объяснить и текстом.</p>
 <h3 id='while'>
   <a href='#while' class='muted'>§</a> while
 </h3>
+<p>Что в переводе с английского дословно «пока». Данный вид цикла <b>сначала</b> проверяет истинность условия, и только если оно истинно выполняет часть алгоритма. Иначе переходит к другой его ветви.</p>
+<p>К примеру, попросим пользователя ввести число и пока его квадрат будет меньше миллиона, будем возвозить его в квадрат и выводить результат:</p>
+<pre><code data-language='python'># encoding: utf-8
+
+# Получаем рациональное число от пользователя:
+number = float(input('Введите число: '))
+
+while number * number &lt; 1000000:
+    number = number * number
+    print(number)</code></pre>
+<p>У данного алгоритма так же есть недостатки. Во-первых мы снова не проверяем, число ли нам вообще поступило. Во-вторых мы совершаем операцию умножения дважды, это не хорошо. В-третьих, если число находится в промежутке от -1 до 1, то этот цикл никогда не закончится, т.к. оно никогда не станет больше миллиона. Исправим это (кроме проверки на ввод числа):</p>
+<pre><code data-language='python'># encoding: utf-8
+
+# Получаем рациональное число от пользователя:
+number = float(input('Введите число: '))
+
+if abs(number) &gt; 1: # abs — функция взятия модуля от числа
+    pow = number**2 # ** это оператор возведения в степень.
+    while pow &lt; 1000000:
+        number = pow
+        print(number)
+        pow = pow**2 # Следующее умножение
+else:
+    print('Число от -1 до 1 не подходит. Вы неудачник.')</code></pre>
+<p>Отлично, теперь мы вычисляем квадрат лишь один раз в цикле. Но теперь появилась другая проблема. Мы вычисляем квадрат следующей итерации цикла. Я не вижу способа решить это кроме как сделать следующим образом:</p>
+<pre><code data-language='python'># encoding: utf-8
+
+# Получаем рациональное число от пользователя:
+number = float(input('Введите число: '))
+
+if abs(number) &gt; 1: # abs — функция взятия модуля от числа
+    while True: # Да-да, цикл будет выполняться «вечно»
+        pow = number**2
+
+        if pow &lt; 1000000: # Если меньше миллиона, присваиваем
+            number = pow
+        else: # Иначе выполняем break, для завершения вышестоящего цикла
+            break
+else:
+    print('Число от -1 до 1 не подходит. Вы неудачник.')</code></pre>
+<p>Здесь мы создали цикл, у которого условие всегда истинно. А самое условие выхода поместили внутрь цикла. Всегда следите за тем, чтобы был какой-либо вариант выхода из цикла. Никто не любит, когда программы зависают.</p>
 <h3 id='do-while'>
   <a href='#do-while' class='muted'>§</a> do while
 </h3>
+<p>Do-while отличается от просто while тем, когда проверяется условие. Если у while оно проверялось перед исполнением части алгоритма, то в do-while оно проверяется после. Т.е. сначала выполняются инструкции алгоритма, а затем проверяется условие. Т.е. инструкции цикла выполнятся хотя бы один раз.</p>
 <h3 id='for'>
   <a href='#for' class='muted'>§</a> for
 </h3>
-<h1 id='concepts'>
-  <a href='#concepts' class='muted'>§</a> Концепции
+<p>For это просто «синтаксический сахар» над while. Синтаксическим сахаром называют такие конструкции языка, которые можно привести к другим, более простым. Они вводятся для того, чтобы на языке было проще писать.</p>
+<p>Выведем все целые числа от 4 до 12 (пример на <a href='http://ru.wikipedia.org/wiki/C%2B%2B'>C++</a>):</p>
+<pre><code data-language='c++'>#include &lt;iostream&gt;
+
+int main(int argc, char *argv[]) {
+
+    // Здесь int i = 3 это создание переменной i целого типа,
+    // которой мы присваиваем значение 3.
+    // i++ это операция увеличения значения i на единицу
+    for (int i = 3; i &lt;= 12; i++) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+    }
+
+    // Переходим на новую строку
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+<p>Семантика оператора for проста. Есть три части: инициализация, проверка условия, пост-действие.</p>
+<ol>
+  <li>Перед выполнением цикла сначала выполняются некоторые действия по инициализации, например, в данном примере мы создаём переменную, по которой будем итерировать.</li>
+  <li>Затем идёт условие. У нас оно проверяет, меньше либо равна ли наша переменная i.</li>
+  <li>Ну и пост-действие (сам назвал, не знаю, как оно на самом деле называется) совершается в момент, когда все инструкции из тела цикла были выполнены (т.е. в конце итерации).</li>
+</ol>
+<p>Когда я говорил, что это синтаксический сахар, я вот что имел в виду. Нашу программу можно переписать следующим образом:</p>
+<pre><code data-language='c++'>#include &lt;iostream&gt;
+
+int main(int argc, char *argv[]) {
+
+    int i = 3;
+    while (i &lt;= 12) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+
+        i++;
+    }
+
+    // Переходим на новую строку
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+<p>Смекаете?</p>
+<h1 id='end'>
+  <a href='#end' class='muted'>§</a> Заключение
 </h1>
-<h2 id='black-box'>
-  <a href='#black-box' class='muted'>§</a> Чёрный ящик
-</h2>
-<h2 id='state'>
-  <a href='#state' class='muted'>§</a> Состояние
-</h2>
-<h2 id='interface-concept'>
-  <a href='#interface-concept' class='muted'>§</a> Интерфейс
-</h2>
-<h1 id='back'>
-  <a href='#back' class='muted'>§</a> Фундаментальное <span class='muted'>(?)</span>
-</h1>
-<h2 id='variable'>
-  <a href='#variable' class='muted'>§</a> Переменная
-</h2>
-<h2 id='array'>
-  <a href='#array' class='muted'>§</a> Массив
-</h2>
-<h2 id='pointer'>
-  <a href='#pointer' class='muted'>§</a> Указатель
-</h2>
-<h1 id='abstract'>
-  <a href='#abstract' class='muted'>§</a> Абстрактные типы данных
-</h1>
-<h2 id='list'>
-  <a href='#list' class='muted'>§</a> Список
-</h2>
-<h3 id='singly-linked'>
-  <a href='#singly-linked' class='muted'>§</a> Односвязный список
-</h3>
-<h3 id='doubly-linked'>
-  <a href='#doubly-linked' class='muted'>§</a> Двусвязный список
-</h3>
-<h2 id='hashtable'>
-  <a href='#hashtable' class='muted'>§</a> Хеш-таблица
-</h2>
-<h3 id='hashmap'>
-  <a href='#hashmap' class='muted'>§</a> HashMap
-</h3>
-<h3 id='hashset'>
-  <a href='#hashset' class='muted'>§</a> HashSet
-</h3>
-<h2 id='tree'>
-  <a href='#tree' class='muted'>§</a> Дерево
-</h2>
-<h1 id='paradigms'>
-  <a href='#paradigms' class='muted'>§</a> Парадигмы
-</h1>
-<h2 id='OOP'>
-  <a href='#OOP' class='muted'>§</a> ООП
-</h2>
-<h2 id='FP'>
-  <a href='#FP' class='muted'>§</a> Функциональное программирование
-</h2>
-<h1 id='OOProgramming'>
-  <a href='#OOProgramming' class='muted'>§</a> Объектно-ориентированное программирование
-</h1>
-<h2 id='object'>
-  <a href='#object' class='muted'>§</a> Объект
-</h2>
-<h2 id='class'>
-  <a href='#class' class='muted'>§</a> Класс
-</h2>
-<h2 id='inheritance'>
-  <a href='#inheritance' class='muted'>§</a> Наследование
-</h2>
-<h2 id='object-interface'>
-  <a href='#object-interface' class='muted'>§</a> Интерфейс
-</h2>
-<h2 id='polymorphism'>
-  <a href='#polymorphism' class='muted'>§</a> Полиморфизм
-</h2>
-<h1 id='architecture'>
-  <a href='#architecture' class='muted'>§</a> Архитектура
-</h1>
-<h2 id='incapsulation'>
-  <a href='#incapsulation' class='muted'>§</a> Инкапсуляция
-</h2>
-<h2 id='patterns'>
-  <a href='#patterns' class='muted'>§</a> Паттерны
-</h2>
-<h3 id='dependency-injection'>
-  <a href='#dependency-injection' class='muted'>§</a> Dependency injection
-</h3>
-<h3 id='pubsub'>
-  <a href='#pubsub' class='muted'>§</a> PubSub
-</h3>
-<h1 id='complexity'>
-  <a href='#complexity' class='muted'>§</a> Сложность алгоритма
-</h1>
+<p>Вот вы и дочитали до конца (либо просто промотали, не знаю). В данный момент написана лишь малая часть того, что должно быть написано, поэтому ждите, или прочитайте об этом в другом месте.</p>
+<p>Так же, если вы нашли какую-либо нестыковку, пожалуйста, уведомите меня об этом. Мои контакты можно найти на <a href='http://com.muna.by/people/ruliov'>страничке про меня</a>.</p>
+<p>Ну и если вам кажется, что я где-то написал что-то непонятно, неполно, либо вообще не покрыл какую-либо область, можете тоже сказать, постараюсь исправить.</p>
+<p>Удачи!</p>
 
     </div>
+  </div>
+
+  <div class='row-fluid text-center' style='margin-top: 10em'>
+    <p><small>Разработано в <a href='http://com.muna.by/landing/project?code' style='color:#8E1816'>Коммуне</a></small></p>
   </div>
 </div>
 
