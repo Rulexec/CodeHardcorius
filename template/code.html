@@ -5,7 +5,12 @@
   <title>Code Hardcorius</title>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+
+  <script src='rainbow.min.js'></script>
+  <link href='github.css' rel='stylesheet' media='screen'>
+
   <link href='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' media='screen'>
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 
   <script>
 $(function() {
@@ -53,7 +58,14 @@ $(function() {
     }
 });
   </script>
+
   <style>
+p {
+    font-size: 1.3em;
+    font-family: 'EB Garamond', serif;
+    font-height: 1.3em;
+    margin: 1em;
+}
 #content-block {
     position: fixed;
     height: 100%;
@@ -136,6 +148,10 @@ $(function() {
     <div class='span8 offset2'>
 {% for item in items %}{% include 'item.html' %}{% endfor %}
     </div>
+  </div>
+
+  <div class='row-fluid text-center' style='margin-top: 10em'>
+    <p><small>Разработано в <a href='http://com.muna.by/landing/project?code' style='color:#8E1816'>Коммуне</a></small></p>
   </div>
 </div>
 

@@ -8,15 +8,16 @@ module.exports = [
             'do-while',
             'for']],
 
-    ['concepts',
-        'black-box',
-        'state',
-        'interface-concept'],
-
     ['back',
         'variable',
         'array',
         'pointer'],
+
+    ['concepts',
+        'black-box',
+        'state',
+        'interface-concept',
+        'function'],
 
     ['abstract',
         ['list',
@@ -44,5 +45,10 @@ module.exports = [
             'dependency-injection',
             'pubsub']],
 
-    'complexity'
+    ['security',
+        'input-data'],
+
+    'complexity',
+
+    'end'
 ];

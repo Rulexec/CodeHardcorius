@@ -1,7 +1,9 @@
+{%- if item.content -%}
 <h{{ item.h }} id='{{ item.id }}'>
   <a href='#{{ item.id }}' class='muted'>§</a> {{ item.title }}
 </h{{ item.h }}>
 {{ item.content }}
+{%- endif -%}
 {%- if item.childs -%}
 {%- for item in item.childs %}{% include 'item.html' %}{% endfor -%}
 {%- endif -%}
