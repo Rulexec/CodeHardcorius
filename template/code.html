@@ -24,17 +24,10 @@ $(function() {
         };
     });
 
-    var isFirstTime = document.cookie.indexOf('hardcorius-hide-content') === -1;
-
     var transition = false;
-    var state = true;
+    var state = false;
     $('#content-button').click(function() {
         if (transition) return;
-
-        if (isFirstTime) {
-            isFirstTime = false;
-            document.cookie = 'hardcorius-hide-content';
-        }
 
         transition = true;
         $('#content-block').animate({right: (state ? '-300px' : '0px')}, 500, 'swing',
@@ -46,14 +39,6 @@ $(function() {
             ).addClass('icon-arrow-' + (state ? 'right' : 'left'));
         });
     });
-
-    if (!isFirstTime) {
-        state = false;
-        $('#content-block').css('right', '-300px');
-        $('#content-button i'
-        ).removeClass('icon-arrow-' + (state ? 'left' : 'right')
-        ).addClass('icon-arrow-' + (state ? 'right' : 'left'));
-    }
 });
   </script>
 
@@ -68,7 +53,7 @@ p {
     position: fixed;
     height: 100%;
     top: 0px;
-    right: 0px;
+    right: -300px;
 }
 #content {
     width: 300px;
@@ -128,7 +113,7 @@ p {
       </ul>
     </div>
   </div>
-  <div id='content-button'><i class='icon-arrow-right'></i></div>
+  <div id='content-button'><i class='icon-arrow-left'></i></div>
 </div>
 
 <div class='container-fluid'>
