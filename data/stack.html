@@ -1,1 +1,47 @@
 Стек
+<p>Стек — структура данных, в которую можно помещать и удалять из неё элементы. Причём тот элемент, который мы положили последним мы достанем первым.</p>
+<p>Это можно сравнить с коробкой, в которую мы складываем книги, причём мы можем ложить книги только одну на одну. Мы видим и можем достать лишь верхнюю из них. Чтобы достать последнюю — нам придётся достать все над ней.</p>
+<p>Стек легко реализовать при помощи списка:</p>
+<pre><code data-language='c++'>#include &lt;iostream&gt;
+
+struct ListElement {
+    int data;
+    ListElement *next;
+};
+
+void addElement(ListElement **list, int x) {
+    ListElement *el = new ListElement();
+    el-&gt;data = x;
+    el-&gt;next = *list;
+    *list = el;
+}
+
+// Получает и удаляет первый элемент списка
+int popElement(ListElement **list) {
+    int data = (*list)-&gt;data; // Достаём данные
+    ListElement *next = (*list)-&gt;next; // и указатель на следующий элемент
+
+    delete *list; // Освобождаем память занятую первым элементом
+    *list = next; // Старый следующий элемент теперь первый
+
+    return data;
+}
+
+int main(int argc, char *argv[]) {
+
+    ListElement *stack = NULL;
+
+    addElement(&amp;stack, 1);
+    addElement(&amp;stack, 2);
+
+    std::cout &lt;&lt; popElement(&amp;stack) &lt;&lt; ' '; // 2
+
+    addElement(&amp;stack, 3);
+
+    std::cout &lt;&lt; popElement(&amp;stack) &lt;&lt; ' '; // 3
+    std::cout &lt;&lt; popElement(&amp;stack) &lt;&lt; ' '; // 1
+
+    std::cout &lt;&lt; std::endl;
+
+}</code></pre>
+<p>Вывод, как не сложно догадаться, будет — 2 3 1.</p>

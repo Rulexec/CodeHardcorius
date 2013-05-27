@@ -13,7 +13,8 @@ module.exports = [
         'array',
         ['function',
             'recursion'],
-        'pointer'],
+        'pointer',
+        'struct'],
 
     ['concepts',
         'black-box',
