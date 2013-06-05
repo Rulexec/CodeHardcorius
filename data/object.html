@@ -1,1 +1,115 @@
 Объект
+<p><i>«Всё есть объект»</i></p>
+<p>Объект — очевидно, основная компонента ООП. Объект, по сути, представляет некий <a href='#black-box'>чёрный ящик</a>, однако чаще всего его реализуете именно вы, поэтому, скорее белый.</p>
+<p>Объекты имеют поля и методы. Поля могут хранить некие данные (это просто такие переменные, доступные в методах объекта и уникальные для каждого объекта). Методы же это обычные функции, которые так же принимают аргументы и так же возвращают результат. Только в дополнение к этому имеют доступ к полям объекта.</p>
+<p>Объекты создаются вызовом конструктора класса. Конструктор класса представляет из себя функцию, которая ведёт себя так же, как и метод.</p>
+<p>Пример класса рационального числа на C++ (дроби с целым числителем и натуральным знаменателем) с методами сложения, вычитания, умножения и деления:</p>
+<pre><code data-language='c++'>#include &lt;iostream&gt;
+
+using namespace std;
+
+class Rational {
+  private:
+    int numerator, denominator;
+  public:
+    Rational(int numerator) {
+        this-&gt;numerator = numerator;
+        denominator = 1;
+    }
+    Rational(int numerator, int denominator) {
+        this-&gt;numerator = numerator;
+        this-&gt;denominator = denominator;
+
+        this-&gt;reduce();
+    }
+
+    Rational add(const Rational &amp;other) const {
+        return Rational(this-&gt;numerator * other.denominator +
+                            other.numerator * this-&gt;denominator,
+                        this-&gt;denominator * other.denominator);
+    }
+    Rational subtract(const Rational &amp;other) const {
+        return Rational(this-&gt;numerator * other.denominator -
+                            other.numerator * this-&gt;denominator,
+                        this-&gt;denominator * other.denominator);
+    }
+
+    Rational multiply(const Rational &amp;other) const {
+        Rational result(this-&gt;numerator * other.numerator,
+                        this-&gt;denominator * other.denominator);
+
+        result.reduce();
+
+        return result;
+        
+    }
+    Rational divide(const Rational &amp;other) const {
+        return this-&gt;multiply(other.inverse());
+    }
+
+    Rational inverse() const {
+        return Rational(this-&gt;denominator, this-&gt;numerator);
+    }
+
+    // Друг для перегрузки оператора &lt;&lt;
+    friend ostream &amp;operator&lt;&lt;(ostream&amp;, const Rational&amp;);
+  private:
+    // Сокращение дроби
+    void reduce() {
+        int gcd = Rational::GCD(this-&gt;numerator, this-&gt;denominator);
+        this-&gt;numerator /= gcd;
+        this-&gt;denominator /= gcd;
+    }
+
+    // Нахождение НОД двух чисел
+    static int GCD(int a, int b) {
+        int min, max;
+        if (a &lt; b) {
+            min = a;
+            max = b;
+        } else {
+            min = b;
+            max = a;
+        }
+
+        while (true) {
+            int n = max / min;
+            max -= min * n;
+
+            if (max == 0) return min;
+
+            int temp = max;
+            max = min;
+            min = temp;
+        }
+    }
+};
+
+// Перегружаем оператор &lt;&lt; для нашего класса
+ostream &amp;operator&lt;&lt;(ostream &amp;os, const Rational &amp;rational)
+{
+    os &lt;&lt; '(' &lt;&lt; rational.numerator &lt;&lt; " / " &lt;&lt; rational.denominator &lt;&lt; ')';
+    return os;
+}
+
+int main(int argc, char *argv[]) {
+
+    Rational a(2);
+    Rational b(3);
+    Rational c(1, 4);
+    Rational d(1, 3);
+    Rational e(2, 3);
+    Rational f(9, 5);
+
+    cout &lt;&lt; c &lt;&lt; " + " &lt;&lt; d &lt;&lt; " = " &lt;&lt; c.add(d) &lt;&lt; endl;
+    cout &lt;&lt; d &lt;&lt; " - " &lt;&lt; c &lt;&lt; " = " &lt;&lt; d.subtract(c) &lt;&lt; endl;
+    cout &lt;&lt; e &lt;&lt; " * " &lt;&lt; f &lt;&lt; " = " &lt;&lt; e.multiply(f) &lt;&lt; endl;
+    cout &lt;&lt; a &lt;&lt; " / " &lt;&lt; b &lt;&lt; " = " &lt;&lt; a.divide(b) &lt;&lt; endl;
+
+}</code></pre>
+<p>Если скомпилировать и запустить этот код, мы получим следующий вывод:</p>
+<pre>(1 / 4) + (1 / 3) = (7 / 12)
+(1 / 3) - (1 / 4) = (1 / 12)
+(2 / 3) * (9 / 5) = (6 / 5)
+(2 / 1) / (3 / 1) = (2 / 3)</pre>
+<p>Как видите, операции над дробями выглядят так, будто бы работают корректно.</p>
