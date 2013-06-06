@@ -47,7 +47,9 @@ module.exports = [
         'incapsulation',
         ['patterns',
             'dependency-injection',
-            'pubsub']],
+            'pubsub',
+            'mvc'],
+        'antipatterns'],
 
     ['security',
         'input-data'],
