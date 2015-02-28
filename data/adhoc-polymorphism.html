@@ -1,0 +1,90 @@
+Ad hoc полиморфизм
+<p>Данный вид полиморфизма описывается принципом «много реализаций с похожим интерфейсом». И он заведует перегрузкой функций.</p>
+<p>Представьте, что у нас есть, к примеру, функция сложения. Много чего можно складывать: целые/дробные числа, строки, массивы, списки, объединять множества.</p>
+<p>И нам бы не хотелось создавать десятки функций вроде addInt, addUInt, addString, addArray, addList, addSet. Хотелось бы иметь одну — add, в которую мы могли бы передать нужные нам значения и получить в результате их сумму/объединение.</p>
+<pre><code data-language='java'>public class Main {
+    private static int add(int a, int b) {
+        return a + b;
+    }
+    private static String add(String a, String b) {
+        return a.concat(b);
+    }
+    private static String add(String a, int b) {
+        return a.concat(Integer.toString(b));
+    }
+    private static int[] add(int[] a, int[] b) {
+        int[] newArray = new int[a.length + b.length];
+        System.arraycopy(a, 0, newArray, 0, a.length);
+        System.arraycopy(b, 0, newArray, a.length, b.length);
+        return newArray;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(add("Hello, ", "World! Answer is "), add(23, 19)));
+
+        int[] a = new int[] {1};
+        int[] b = new int[] {2, 3};
+        int[] c = add(a, b);
+
+        for (int x : c) {
+            System.out.println(x);
+        }
+    }
+}</code></pre>
+<p>Здесь мы написали четыре функции на Java, которые складывают числа, строки, строку и число с приведением числа к строке, а так же объединение двух массивов путём создания третьего и копированию в него двух других.</p>
+<p>Но теперь посмотрим на полиморфизм относительно ООП. В ООП мы создаём классы, у которых есть методы. И можно наследоваться, а затем переопределять эти методы. Но теперь представьте, что вы определяете классы не «цельно», вот так:</p>
+<pre><code data-language='java'>class A {
+    protected int value;
+    public A(int value) {
+        this.value = value;
+    }
+    public int magic(int x) {
+        return this.value + x;
+    }
+}
+class B extends A {
+    public B(int value) { super(value); }
+    public int magic(int x) {
+        return this.value * 2 + x;
+    }
+}
+
+public class Main3 {
+    public static void main(String[] args) {
+        A a = new A(5);
+        A b = new B(5);
+
+        System.out.println("A value: " + a.magic(2));
+        System.out.println("B value: " + a.magic(2));
+    }
+}</code></pre>
+<p>А двумя частями: отдельно структуру, несущую данные и отдельно методы, у которых первым аргументом передаётся то, что будет внутри этой функции this'ом:</p>
+<pre><code data-language='java'>class AData {
+    public int value;
+    public AData(int value) { this.value = value; }
+}
+class BData extends AData {
+    public BData(int value) { super(value); }
+}
+
+public class Main {
+    public static int magic(AData self, int x) {
+        return self.value + x;
+    }
+    public static int magic(BData self, int x) {
+        return self.value * 2 + x;
+    }
+
+    public static void main(String[] args) {
+        AData a = new AData(5);
+        BData b = new BData(5);
+
+        System.out.println("A value: " + magic(a, 2));
+        System.out.println("B value: " + magic(b, 2));
+    }
+}</code></pre>
+<p>Хотя довольно грубый пример, из-за некоторых особенностей dispatch'инга методов (если бы я написал AData b, никакой магии бы не произошло), но если бы для функций диспетчеризация происходила динамически, было бы совсем отлично. Но оно работает и примерно видно, что переопределение методов классов это на самом деле перегрузка функций по типу, который несёт данные этого класса.</p>
+<p>Что же это всё нам действительно даёт?</p>
+<p>Предположим, мы хотим написать функцию, которая принимает список чисел и возвращает их сумму. Однако в Java'е существует множество разных реализаций списков, к примеру, LinkedList, ArrayList. Очевидно, мы не хотим для каждого писать свою реализацию. Мы хотим получить себе в функцию абстрактный «список чисел», а затем использовать методы, которые позволят нам извлечь из него числа и сложить их.</p>
+<p>Поэтому существует интерфейс List, который имеет методы, которые свойственны всем реализациям списка. И мы можем попросить аргумент функции быть реализацией интерфейса List, а не конкретным списком.</p>
+<p>И когда мы будем вызывать методы, на самом деле будут вызываться методы той реализации, которая используется.</p>

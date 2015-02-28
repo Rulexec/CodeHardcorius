@@ -1,7 +1,7 @@
 module.exports = [
     'introduction',
 
-    ['algorhytm',
+    ['algorithm',
         'if',
         ['loop',
             'while',
@@ -41,7 +41,9 @@ module.exports = [
         'class',
         'inheritance',
         'object-interface',
-        'polymorphism'],
+        ['polymorphism',
+            'adhoc-polymorphism',
+            'parametric-polymorphism']],
 
     ['architecture',
         'incapsulation',
